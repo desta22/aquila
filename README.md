@@ -1,5 +1,7 @@
 # WP Theme Aquila
-
+WP-ADMIN
+admin
+secret
 
 
 ### Advanced WordPress Theme Development
