@@ -34,11 +34,17 @@ add_theme_support('title-tag');
 
 function aquila_enqueue_script()
 {
-    wp_register_style('aquila-style', get_stylesheet_uri(), [], '', 'all');
-    wp_register_script('aquila-main-js', get_template_directory_uri().'/assets/main.js', [], false, true);
+    wp_register_style('bootstrap-css', get_template_directory_uri() . '/assets/src/lib/bootstrap/css/bootstrap.min.css', [], '', 'all');
+    wp_register_style('aquila-css', get_stylesheet_uri(), [], '', 'all');
+
+    wp_register_script('aquila-main-js', get_template_directory_uri().'/assets/main.js', ['jquery'], false, true);
+    wp_register_script('bootstrap-js', get_template_directory_uri().'/assets/src/lib/bootstrap/js/bootstrap.bundle.min.js', ['jquery'], false, true);
 
     
-    wp_enqueue_style('aquila-style');
+    wp_enqueue_style('aquila-css');
+    wp_enqueue_style('bootstrap-css');
+
+    wp_enqueue_script('bootstrap-js');
     wp_enqueue_script('aquila-main-js');
 }
 add_action('wp_enqueue_scripts', 'aquila_enqueue_script');
