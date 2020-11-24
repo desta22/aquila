@@ -1,12 +1,23 @@
-<?php 
+<?php
+
 /**
  * Header Navigation template part
  * 
  * @package Aquila
  */
 ?>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <?php
+    $custom_logo_id = get_theme_mod('custom_logo');
+    $logo = wp_get_attachment_image_src($custom_logo_id, 'thumbnail');
+    if (has_custom_logo()) {
+      echo '<img src="' . esc_url($logo[0]) . '" alt="' . get_bloginfo('name') . '">';
+    } else {
+      echo '<span>' . get_bloginfo('name') . '</span>';
+    }
+    ?>
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -36,7 +47,12 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
     </form>
+    <ul class="navbar-nav ">
+      <li class="nav-item">
+        <a class="nav-link js__contact_offcanvas_btn" data-trigger="#contact_offcanvas" href="#">Open</a>
+      </li>
+    </ul>
   </div>
 </nav>

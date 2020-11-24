@@ -1,0 +1,43 @@
+
+
+/***
+====================================================================
+	Fonts
+====================================================================
+ ***/
+//'Open Sans', sans-serif
+$font_primary: 'Roboto', sans-serif;
+$font_secondary: 'Roboto Slab', serif;
+
+/***
+====================================================================
+	Colors
+====================================================================
+ ***/
+$green_c : #86d0cb;
+$gray_c:#313131;
+$text_c:#7A7A7A;
+
+
+
+/***
+====================================================================
+	Bootstrap them overrides
+====================================================================
+ ***/
+//$enable-rounded: false !default;
+$btn-border-radius: 3px;
+$input-border-radius: 3px;
+.form-control {
+  border-radius: 2px;
+}
+
+//$border-radius-base:        18px ;
+$theme-colors: (
+        "primary": $green_c,
+        "secondary": $gray_c,
+        "danger": #e5534c,
+        
+);
+$font-family-base: $font_primary;
+$headings-font-family:$font_secondary;

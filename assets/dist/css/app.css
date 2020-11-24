@@ -1,0 +1,189 @@
+/***
+====================================================================
+	Fonts
+====================================================================
+ ***/
+/***
+====================================================================
+	Colors
+====================================================================
+ ***/
+/***
+====================================================================
+	Bootstrap them overrides
+====================================================================
+ ***/
+.form-control {
+  border-radius: 2px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:visited {
+  text-decoration: none;
+  outline: none;
+}
+
+.our-product .single-product {
+  background: #fff;
+  box-shadow: 0px 2px 19px 0px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.our-product .single-product .product-info {
+  height: 450px;
+  position: relative;
+}
+
+.our-product .single-product .product-info:before {
+  content: url(../../images/shape2.png);
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.our-product .single-product .product-info .product-img {
+  display: inline-block;
+  position: relative;
+  padding: 70px 0 30px;
+}
+
+.our-product .single-product .product-info .product-img .badge-tag {
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 18px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  background: #86d0cb;
+  color: #fff;
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+  z-index: 1;
+}
+
+.our-product .single-product .product-info .product-img img {
+  transition: all 0.6s ease-in-out;
+}
+
+.our-product .single-product:hover .product-info .product-img img {
+  transform: scale3d(1.1, 1.1, 1);
+}
+
+.our-product .single-product .product-info .name {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+}
+
+.our-product .single-product .product-info .name span {
+  color: var(--p-color);
+  font-size: 17px;
+  font-weight: normal;
+}
+
+.our-product .single-product .button-group li {
+  float: left;
+  width: 50%;
+  height: 60px;
+}
+
+.our-product .single-product .button-group li .price-button {
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  background: #86d0cb;
+  display: block;
+  line-height: 60px;
+}
+
+.our-product .single-product .button-group li .price-button del {
+  font-size: 14px;
+  font-weight: normal;
+  padding-left: 5px;
+}
+
+.our-product .single-product .button-group li .order-button {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 60px;
+  background: #333333;
+  display: block;
+}
+
+.offcanvas-header {
+  display: none;
+}
+
+.screen-overlay {
+  height: 100%;
+  z-index: 30;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(34, 34, 34, 0.6);
+  transition: opacity 0.2s linear, visibility 0.1s, width 1s ease-in;
+}
+
+.screen-overlay.show {
+  transition: opacity 0.5s ease, width 0s;
+  opacity: 1;
+  width: 100%;
+  visibility: visible;
+}
+
+.offcanvas-header {
+  display: block;
+}
+
+.contact-offcanvas {
+  background-color: #313131;
+  visibility: hidden;
+  transform: translateX(100%);
+  border-radius: 0;
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 1200;
+  width: 300px;
+  overflow-x: hidden;
+  transition: visibility 0.2s ease-in-out, transform 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+.contact-offcanvas.show {
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.admin-bar .contact-offcanvas {
+  top: 32px;
+  height: calc(100% - 32px);
+}
+/*# sourceMappingURL=app.css.map*/
