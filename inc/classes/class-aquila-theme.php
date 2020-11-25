@@ -17,10 +17,8 @@ class AQUILA_THEME
     protected function __construct()
     {
         // Loade class
-
-        // Loade Asset Class
         Assets::get_instance();
-
+        Menus::get_instance();
 
         $this->setup_hooks();
     }

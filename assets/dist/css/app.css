@@ -186,4 +186,8 @@ a:visited {
   top: 32px;
   height: calc(100% - 32px);
 }
+
+.navbar-brand img {
+  max-width: 40px;
+}
 /*# sourceMappingURL=app.css.map*/
