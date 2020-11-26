@@ -33,6 +33,11 @@ a:visited {
   outline: none;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .our-product .single-product {
   background: #fff;
   box-shadow: 0px 2px 19px 0px rgba(0, 0, 0, 0.05);
