@@ -17,7 +17,7 @@ $has_post_thumbnail  = get_the_post_thumbnail($the_post_id);
                     $the_post_id,
                     'feature-large',
                     [
-                        'sizes' => '(max-width:590px) 590px, 425px',
+                        'sizes' => '(max-width:600px) 600px, 400px',
                         'class' => 'attachment-featured-large size-featred-image'
                     ]
                 ) ?>
