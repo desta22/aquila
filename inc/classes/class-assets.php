@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 /**
  * Enqueue Theme Assets
  * 
@@ -9,10 +10,11 @@ namespace AQUILA_THEME\Inc;
 
 use AQUILA_THEME\Inc\Traits\Singleton;
 
-class Assets{
+class Assets
+{
     use Singleton;
 
- protected function __construct()
+    protected function __construct()
     {
         // Loade class
         $this->setup_hooks();
@@ -23,7 +25,7 @@ class Assets{
         // Actions
         add_action('wp_enqueue_scripts', [$this, 'register_styles']);
         add_action('wp_enqueue_scripts', [$this, 'register_scripts']);
-    
+
         //  Filters
     }
 
