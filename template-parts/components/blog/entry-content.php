@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Post Entry Content Template
  * 
@@ -22,6 +23,7 @@
             )
         );
     } else {
-        aquila_the_excerpt( 150 );    
-    }?>
+        aquila_the_excerpt(150);
+        echo aquila_excerpt_more();
+    } ?>
 </div>

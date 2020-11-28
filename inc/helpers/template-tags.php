@@ -92,6 +92,21 @@ function aquila_posted_by()
     echo '<span class="byline ">' . $byline . '</span>';
 }
 
+
+/**
+ * Get the trimmed version of post excerpt.
+ *
+ * This is for modifing manually entered excerpts,
+ * NOT automatic ones WordPress will grab from the content.
+ *
+ * It will display the first given characters ( e.g. 100 ) characters of a manually entered excerpt,
+ * but instead of ending on the nth( e.g. 100th ) character,
+ * it will truncate after the closest word.
+ *
+ * @param int $trim_character_count Charter count to be trimmed
+ *
+ * @return bool|string
+ */
 function aquila_the_excerpt($trim_character_count = 0)
 {
     // if (! has_excerpt() || 0 === $trim_character_count) {
@@ -103,5 +118,27 @@ function aquila_the_excerpt($trim_character_count = 0)
     $excerpt = substr($excerpt, 0, $trim_character_count);
     $excerpt = substr($excerpt, 0, strrpos($excerpt, ' '));
 
-    echo $excerpt . ' [...]';
+    echo $excerpt . ' [...] ';
+}
+
+
+/**
+ * Filter the "read more" excerpt string link to the post.
+ *
+ * @param string $more "Read more" excerpt string.
+ *
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+
+function aquila_excerpt_more($more = '')
+{
+    if (!is_single()) {
+        $more = sprintf(
+            '<a class="aquila-reader-more-link " href="%1&s">%2$s</a>',
+            get_permalink(get_the_ID()),
+            __('Reader more', 'aquila')
+        );
+    }
+
+    return $more;
 }

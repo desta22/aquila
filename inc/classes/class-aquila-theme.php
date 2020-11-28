@@ -54,6 +54,7 @@ class AQUILA_THEME
         // Register image sizes.
 		add_image_size( 'featured-thumbnail', 350, 233, true );
 		add_image_size('feature-large', 600, 400, true );
+		add_image_size('feature-full', 1100, '', false );
 
         // Add theme support for selective refresh for widgets.
         add_theme_support('customize-selective-refresh-widgets');
