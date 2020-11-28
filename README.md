@@ -2,9 +2,10 @@
 Starter them 
 
 ## Theme features
-1. Post meta box show / hide post title
-2. Bootstrap nav menu
-3. Admin styles
+1. SCSS with laravel mixin
+2. Post meta box show / hide post title
+3. Bootstrap nav menu
+4. Admin styles
 
 ## Template tags
 1. Custom post thumbernail with lazy loading
