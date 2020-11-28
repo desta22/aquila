@@ -142,3 +142,8 @@ function aquila_excerpt_more($more = '')
 
     return $more;
 }
+
+
+function aquila_pagination(){
+
+}

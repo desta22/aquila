@@ -6,6 +6,7 @@
 ?>
 
 <?php get_header(); ?>
+<p>index.php</p>
 <div id="primary">
     <main id="main" class="site-main" role="main">
         <?php if (have_posts()) :  ?>
@@ -24,6 +25,8 @@
                         </div>
                     <?php endwhile; ?>
                 </div>
+
+                <?php aquila_pagination(); ?>
             </div>
         <?php else :  ?>
             <?php get_template_part('template-parts/content-none') ?>
