@@ -38,6 +38,10 @@ img {
   height: auto;
 }
 
+.hide {
+  display: none;
+}
+
 .our-product .single-product {
   background: #fff;
   box-shadow: 0px 2px 19px 0px rgba(0, 0, 0, 0.05);
@@ -194,5 +198,9 @@ img {
 
 .navbar-brand img {
   max-width: 40px;
+}
+
+.updated:not(.published) {
+  display: none;
 }
 /*# sourceMappingURL=app.css.map*/
