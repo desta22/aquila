@@ -77,12 +77,31 @@ function aquila_posted_on()
     echo '<span class="posted-on text-secondary">' . $posted_on . '</span>';
 }
 
-
-function aquila_posted_by(){
+/**
+ * Prints HTML with meta information for the current author.
+ *
+ * @return void
+ */
+function aquila_posted_by()
+{
     $byline = sprintf(
         esc_attr_x(' by %s', 'post author', 'aquila'),
         '<span class="author vcard"><a href="' .  esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' .  esc_html(get_the_author()) . '</a></span>'
     );
 
     echo '<span class="byline ">' . $byline . '</span>';
+}
+
+function aquila_the_excerpt($trim_character_count = 0)
+{
+    // if (! has_excerpt() || 0 === $trim_character_count) {
+    //     the_excerpt();
+    //     return;
+    // }
+
+    $excerpt = wp_strip_all_tags(get_the_excerpt());
+    $excerpt = substr($excerpt, 0, $trim_character_count);
+    $excerpt = substr($excerpt, 0, strrpos($excerpt, ' '));
+
+    echo $excerpt . ' [...]';
 }

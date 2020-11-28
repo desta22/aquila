@@ -10,6 +10,7 @@ Starter them
 ## Template tags
 1. Custom post thumbernail with lazy loading
 2. Postid / modified on date
+3. Author name
 
 
 
