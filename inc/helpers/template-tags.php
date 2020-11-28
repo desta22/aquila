@@ -144,6 +144,23 @@ function aquila_excerpt_more($more = '')
 }
 
 
-function aquila_pagination(){
-
+function aquila_pagination()
+{
+    $args = [
+        'before_page_number' => '<span class="btn  mr-1 mb-1">',
+        'after_page_number' => '</span>'
+    ];
+    $allowed_tags = [
+        'span' => [
+            'class' => []
+        ],
+        'a' => [
+            'class' => [],
+            'href' => [],
+        ],
+    ];
+    printf(
+        '<nav class="aquila-pagination">%s</nav>',
+        wp_kses(paginate_links($args), $allowed_tags)
+    );
 }

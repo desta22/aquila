@@ -203,4 +203,35 @@ img {
 .updated:not(.published) {
   display: none;
 }
+
+.aquila-pagination .btn {
+  color: #212529;
+  background-color: #fff;
+  border-color: #d4d4d4;
+}
+.aquila-pagination .prev.page-numbers,
+.aquila-pagination .next.page-numbers {
+  margin-bottom: 0.25rem;
+  margin-right: 0.25rem;
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 1px solid #d4d4d4;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 3px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.aquila-pagination .page-numbers.current .btn {
+  background-color: #212529;
+  border-color: #212529;
+  color: #fff;
+}
 /*# sourceMappingURL=app.css.map*/
