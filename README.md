@@ -7,7 +7,8 @@ Starter them
 3. Bootstrap nav menu
 4. Admin styles
 5. Custom sidebars
-6. Custom vidget - Recent posts widget with thumbnails
+6. Site option page
+7. Custom vidget - Recent posts widget with thumbnails
 
 ## Template tags
 1. Custom post thumbernail with lazy loading

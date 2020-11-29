@@ -27,8 +27,16 @@ class Sidebars
             'widgets_init',
             [$this, 'aquils_register_sidebars']
         );
+        add_action('widgets_init', [$this, 'aquila_register_widgets']);
+
+
 
         //  Filters
+    }
+
+    public function aquila_register_widgets()
+    {
+        register_widget('AQUILA_THEME\Inc\Clock_Widget');
     }
 
     public function aquils_register_sidebars()
