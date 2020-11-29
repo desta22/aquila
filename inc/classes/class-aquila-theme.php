@@ -23,6 +23,7 @@ class AQUILA_THEME
         Admin_Assets::get_instance();
         Clean_Up_Header::get_instance();
         Sidebars::get_instance();
+        Site_Options::get_instance();
 
         $this->setup_hooks();
     }
