@@ -11,7 +11,7 @@ namespace AQUILA_THEME\Inc;
 use AQUILA_THEME\Inc\Traits\Singleton;
 use WP_Widget;
 
-class Recent_Posts_With_Tthumbnails_Widget extends WP_Widget
+class Post_widget_2 extends WP_Widget
 {
     use Singleton;
 
@@ -21,9 +21,9 @@ class Recent_Posts_With_Tthumbnails_Widget extends WP_Widget
     public function __construct()
     {
         parent::__construct(
-            'recent_posts_with_tthumbnails_widget', // Base ID
-            'Posts With Tthumbnails Widget', // Name
-            ['description' => __('A Recent Posts With Tthumbnails Widget', 'aquila'),] // Args
+            'post_widget_2', // Base ID
+            'Post With Images', // Name
+            ['description' => __('A Recent Post With Images Widget', 'aquila'),] // Args
         );
     }
 
@@ -40,19 +40,24 @@ class Recent_Posts_With_Tthumbnails_Widget extends WP_Widget
         extract($args);
 
         $title = apply_filters('widget_title', $instance['title']);
+        $posts_number =  $instance['posts_number'];
 
         echo $before_widget;
         if (!empty($title)) {
             echo $before_title . $title . $after_title;
-        } 
-        
-        // $args = [
-
-        //     'post_type' => 'post',
-        //     'posts_per_page ' => 'post',
-        // ]
+        } ?>
+        <?php // Create and run custom loop
+        $custom_posts = new \WP_Query();
+        $custom_posts->query("post_type=post&posts_per_page= $posts_number");
+        while ($custom_posts->have_posts()) : $custom_posts->the_post();
         ?>
-        
+            <li>
+               
+                <a href="<?php the_permalink(); ?>"><?php the_post_custom_thumbnail(get_the_ID()); ?></a>
+                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            </li>
+        <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
 
     <?php
 
@@ -71,24 +76,24 @@ class Recent_Posts_With_Tthumbnails_Widget extends WP_Widget
         if (isset($instance['title'])) {
             $title = $instance['title'];
         } else {
-            $title = __('Clock', 'aquila');
+            $title = __('Recent Post', 'aquila');
         }
-        if (isset($instance['number_of_posts'])) {
-            $number_of_posts = $instance['number_of_posts'];
+        if (isset($instance['posts_number'])) {
+            $posts_number = $instance['posts_number'];
         } else {
-            $number_of_posts = __('Clock', 'aquila');
+            $posts_number = __('5', 'aquila');
         }
     ?>
         <p>
             <label for="<?php echo $this->get_field_name('title'); ?>"><?php _e('Title:', 'aquila'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
         </p>
-        <?php /* ?>
         <p>
-            <label for="<?php echo $this->get_field_name('number_of_posts'); ?>"><?php _e('Posts to show:', 'aquila'); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id('number_of_posts'); ?>" name="<?php echo $this->get_field_name('number_of_posts'); ?>" type="number" value="<?php echo esc_attr($number_of_posts); ?>" />
+            <label for="<?php echo $this->get_field_name('posts_number'); ?>">
+                <?php _e('Number of posts:', 'aquila'); ?>
+            </label>
+            <input class="widefat" id="<?php echo $this->get_field_id('posts_number'); ?>" name="<?php echo $this->get_field_name('posts_number'); ?>" type="number" value="<?php echo esc_attr($posts_number); ?>" />
         </p>
-        <?php */ ?>
 <?php
     }
 
@@ -106,7 +111,7 @@ class Recent_Posts_With_Tthumbnails_Widget extends WP_Widget
     {
         $instance = [];
         $instance['title'] = (!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
-        // $instance['number_of_posts'] = (!empty($new_instance['number_of_posts'])) ? strip_tags($new_instance['number_of_posts']) : '';
+        $instance['posts_number'] = (!empty($new_instance['posts_number'])) ? strip_tags($new_instance['posts_number']) : '';
 
         return $instance;
     }
