@@ -6,6 +6,7 @@ Starter them
 2. Post meta box show / hide post title
 3. Bootstrap nav menu
 4. Admin styles
+5. Custom sidebars
 
 ## Template tags
 1. Custom post thumbernail with lazy loading

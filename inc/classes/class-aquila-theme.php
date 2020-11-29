@@ -21,10 +21,12 @@ class AQUILA_THEME
         Menus::get_instance();
         Meta_Boxes::get_instance();
         Admin_Assets::get_instance();
+        Clean_Up_Header::get_instance();
+        Sidebars::get_instance();
 
         $this->setup_hooks();
     }
-
+ 
     protected function setup_hooks()
     {
         // Actions
